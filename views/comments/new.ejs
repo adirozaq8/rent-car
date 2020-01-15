@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center mb-2">
+        <h1>Create a New Comment to <%= car.name %></h1>
+    </div>
+    <div class="col-sm-8 col-md-6 col-lg-4 mx-auto">
+        <form class="mb-2" action="/cars/<%= car._id %>/comments" method="POST">
+          <input class="form-control mb-2" type="text" name="comment[text]" placeholder="text">
+          <button class="btn btn-primary">Submit</button>
+        </form>
+        <a href="/cars/<%= car._id %>">Go Back</a>
+    </div>
+    
+  </div>
+
+</div>
+<% include ../partials/footer %>

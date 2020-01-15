@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <header class="jumbotron">
+    <h1>Cars Page</h1>
+    <p>Pick any car do you want.</p>
+    <p>
+      <a class="btn btn-primary btn-lg" href="/cars/new">Add New Car</a>
+    </p>
+  </header>
+  
+  <div class="row">
+      <% cars.forEach( (car) => { %>
+        <div class="col-md-3 col-sm-6 mb-2">
+          <div class="card">
+            <img class="card-img-top" src="<%= car.image %>">
+            <div class="card-body text-center">
+              <h5 class="card-title"><%= car.name %></h5>
+              <a href="/cars/<%= car._id %>" class="btn btn-primary">More info</a>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+  </div>
+</div>
+
+
+<% include ../partials/footer %>

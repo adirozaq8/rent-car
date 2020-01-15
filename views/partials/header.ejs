@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <title>RentCar</title>
+</head>
+<body>
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <a class="navbar-brand" href="/">RentCar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <% if(!currentUser){ %>
+          <a class="nav-item nav-link" href="/login">Login</a>
+          <a class="nav-item nav-link" href="/register">Sign Up</a>
+        <% } else { %>
+          <p class="nav-item nav-link">Signed In As <%= currentUser.username %></p>
+          <a class="nav-item nav-link" href="/logout">Logout</a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <% if(error && error.length > 0){ %>
+    <div class="alert alert-danger" role="alert">
+      <%= error %>
+    </div>
+    <% } else if(success && success.length > 0){ %>
+    <div class="alert alert-success" role="alert">
+      <%= success %>
+    </div>
+    <% } %>
+  </div>
+  
