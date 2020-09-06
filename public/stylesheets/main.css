@@ -1,3 +1,7 @@
 .delete-form {
   display: inline;
 }
+
+.form-width {
+  max-width: 350px;
+}

@@ -15,9 +15,7 @@ var carRoutes = require('./routes/cars'),
     commentRoutes = require('./routes/comments'),
     indexRoutes = require('./routes/index');
 
-var url = process.env.DATABASEURL;
-
-mongoose.connect(url, {
+mongoose.connect(process.env.DATABASEURL, {
   useNewUrlParser: true,
   useCreateIndex: true
 }).then(() => {
